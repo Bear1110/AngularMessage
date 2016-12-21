@@ -8,19 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var core_1 = require("@angular/core");
+var NavbarComponent = (function () {
+    function NavbarComponent() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello {{name}}</h1>"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    return NavbarComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+NavbarComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'nav-bar',
+        templateUrl: '../../src/template/navbar.component.html',
+    }),
+    __metadata("design:paramtypes", [])
+], NavbarComponent);
+exports.NavbarComponent = NavbarComponent;
+//# sourceMappingURL=navbar.component.js.map
