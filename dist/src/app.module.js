@@ -10,12 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var http_1 = require('@angular/http');
+var http_2 = require('@angular/http');
+require('./rxjs-extensions');
 //router
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
 var navbar_component_1 = require('./navbar.component');
 var message_board_component_1 = require('./message-board.component');
 var home_component_1 = require('./home.component');
+var message_service_1 = require('./message.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +27,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                http_1.HttpModule,
+                http_2.JsonpModule,
                 app_routing_module_1.AppRoutingModule
             ],
             declarations: [
@@ -31,6 +37,7 @@ var AppModule = (function () {
                 message_board_component_1.MessageBoardComponent,
                 home_component_1.HomeComponent
             ],
+            providers: [message_service_1.MessageService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

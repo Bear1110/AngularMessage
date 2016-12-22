@@ -10,22 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var message_service_1 = require('./message.service');
 var MessageBoardComponent = (function () {
-    function MessageBoardComponent(router) {
+    function MessageBoardComponent(messageService, router) {
+        this.messageService = messageService;
         this.router = router;
     }
     MessageBoardComponent.prototype.ngOnInit = function () {
-        // this.getHeroes();
+        this.getMessages();
     };
-    MessageBoardComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedMessage.id]);
+    MessageBoardComponent.prototype.getMessages = function () {
+        var _this = this;
+        this.messageService.getMessages().then(function (messages) { return _this.messages = messages; });
     };
     MessageBoardComponent = __decorate([
         core_1.Component({
             selector: 'message-board',
-            template: "\n  <form class=\"form-horizontal\">\n\n  <fieldset>\n  <div class=\"panel panel-primary\">\n  <div class=\"panel-heading\">\n    <h3 class=\"panel-title\">Panel primary</h3>\n  </div>\n  <div class=\"panel-body\">\n    Panel content\n  </div>\n</div>\n  </fieldset>\n</form>\n  ",
+            template: "\n  <form class=\"form-horizontal\">\n\n  <div class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">\u7559\u8A00\u677F</h3>\n    </div>\n    <div class=\"panel-body\">\n    </div>\n  </div>\n  {{messages}}.....\n  <div *ngFor=\"let message of messages\" class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Panel primary</h3>\n    </div>\n    <div  class=\"panel-body\">\n      {{message.content}}}\n    </div>\n  </div>\n</form>\n  ",
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [message_service_1.MessageService, router_1.Router])
     ], MessageBoardComponent);
     return MessageBoardComponent;
 }());
