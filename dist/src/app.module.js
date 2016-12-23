@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var http_2 = require('@angular/http');
 require('./rxjs-extensions');
+var http_3 = require('@angular/http');
 //router
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
@@ -37,8 +38,14 @@ var AppModule = (function () {
                 message_board_component_1.MessageBoardComponent,
                 home_component_1.HomeComponent
             ],
-            providers: [message_service_1.MessageService],
-            bootstrap: [app_component_1.AppComponent]
+            providers: [
+                message_service_1.MessageService,
+                {
+                    provide: http_3.XSRFStrategy,
+                    useValue: new http_3.CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
+                }
+            ],
+            bootstrap: [app_component_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

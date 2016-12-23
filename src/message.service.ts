@@ -14,7 +14,7 @@ export class MessageService {
   getMessages(): Promise<Message[]> {
     return this.http.get(this.messagesUrl)
       .toPromise()
-      .then(response => response.json().data as Message[])
+      .then(response => response.json() as Message[])
       .catch(this.handleError);
   }
   //

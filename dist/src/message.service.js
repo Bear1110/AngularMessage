@@ -19,7 +19,7 @@ var MessageService = (function () {
     MessageService.prototype.getMessages = function () {
         return this.http.get(this.messagesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     MessageService.prototype.handleError = function (error) {

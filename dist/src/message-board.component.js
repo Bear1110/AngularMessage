@@ -15,6 +15,7 @@ var MessageBoardComponent = (function () {
     function MessageBoardComponent(messageService, router) {
         this.messageService = messageService;
         this.router = router;
+        this.test = "123";
     }
     MessageBoardComponent.prototype.ngOnInit = function () {
         this.getMessages();
@@ -22,11 +23,12 @@ var MessageBoardComponent = (function () {
     MessageBoardComponent.prototype.getMessages = function () {
         var _this = this;
         this.messageService.getMessages().then(function (messages) { return _this.messages = messages; });
+        console.log(this.messages);
     };
     MessageBoardComponent = __decorate([
         core_1.Component({
             selector: 'message-board',
-            template: "\n  <form class=\"form-horizontal\">\n\n  <div class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">\u7559\u8A00\u677F</h3>\n    </div>\n    <div class=\"panel-body\">\n    </div>\n  </div>\n  {{messages}}.....\n  <div *ngFor=\"let message of messages\" class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Panel primary</h3>\n    </div>\n    <div  class=\"panel-body\">\n      {{message.content}}}\n    </div>\n  </div>\n</form>\n  ",
+            template: "\n  <form class=\"form-horizontal\">\n\n  <div class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">\u7559\u8A00\u677F</h3>\n    </div>\n    <div class=\"panel-body\">\n    </div>\n  </div>\n  {{messages}}.....-.-\n  <div *ngFor=\"let message of messages\" class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Panel primary</h3>\n    </div>\n    <div  class=\"panel-body\">\n      {{message.content}}}\n    </div>\n  </div>\n</form>\n  ",
         }), 
         __metadata('design:paramtypes', [message_service_1.MessageService, router_1.Router])
     ], MessageBoardComponent);

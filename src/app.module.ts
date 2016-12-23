@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import {JsonpModule} from '@angular/http';
 import './rxjs-extensions';
+
+import { XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
+
 //router
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +28,13 @@ import { MessageService } from './message.service';
     MessageBoardComponent,
     HomeComponent
   ],
-  providers: [MessageService],
-  bootstrap: [AppComponent]
+  providers: [
+    MessageService,
+    {
+      provide: XSRFStrategy,
+      useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
+    }
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

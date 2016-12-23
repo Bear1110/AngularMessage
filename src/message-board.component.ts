@@ -16,7 +16,7 @@ import { MessageService } from './message.service';
     <div class="panel-body">
     </div>
   </div>
-  {{messages}}.....
+  {{messages}}.....-.-
   <div *ngFor="let message of messages" class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Panel primary</h3>
@@ -31,6 +31,7 @@ import { MessageService } from './message.service';
 export class MessageBoardComponent implements OnInit {
   messages: Message[];
   selectedMessage: Message;
+  test: string = "123";
 
   constructor(
     private messageService: MessageService,
@@ -43,6 +44,7 @@ export class MessageBoardComponent implements OnInit {
 
   getMessages(): void {
     this.messageService.getMessages().then(messages => this.messages = messages);
+    console.log(this.messages);
   }
   //
   // onSelect(hero: Hero): void {
