@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'my-app',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   `,
 })
 export class AppComponent {
-  
+  ngAfterViewInit() {
+    $("body").append("<h1>fucking test</h1>");
+  }
 }
