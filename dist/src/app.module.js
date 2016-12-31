@@ -21,6 +21,7 @@ var navbar_component_1 = require('./navbar.component');
 var message_board_component_1 = require('./message-board.component');
 var home_component_1 = require('./home.component');
 var message_service_1 = require('./message.service');
+var mousewheel_directive_1 = require('./mousewheel.directive');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +37,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 navbar_component_1.NavbarComponent,
                 message_board_component_1.MessageBoardComponent,
-                home_component_1.HomeComponent
+                home_component_1.HomeComponent,
+                mousewheel_directive_1.MouseWheelDirective
             ],
             providers: [
                 message_service_1.MessageService,
