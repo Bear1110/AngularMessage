@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var home_component_1 = require('./home.component');
 var message_board_component_1 = require('./message-board.component');
+var mouse_wheel_component_1 = require('./mouse-wheel.component');
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
-    { path: 'messageBoard', component: message_board_component_1.MessageBoardComponent }
+    { path: 'messageBoard', component: message_board_component_1.MessageBoardComponent },
+    { path: 'mouseWheel', component: mouse_wheel_component_1.MouseWheelComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

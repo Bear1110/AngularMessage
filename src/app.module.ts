@@ -15,6 +15,7 @@ import { MessageBoardComponent }  from './message-board.component';
 import { HomeComponent }  from './home.component';
 import { MessageService } from './message.service';
 import { MouseWheelDirective } from './mousewheel.directive';
+import { MouseWheelComponent }   from './mouse-wheel.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { MouseWheelDirective } from './mousewheel.directive';
     NavbarComponent,
     MessageBoardComponent,
     HomeComponent,
-    MouseWheelDirective
+    MouseWheelDirective,
+    MouseWheelComponent
   ],
   providers: [
     MessageService,

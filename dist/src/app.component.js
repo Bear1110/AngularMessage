@@ -12,9 +12,6 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
     }
-    AppComponent.prototype.ngAfterViewInit = function () {
-        $("body").append("<h1>fucking test</h1>");
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
